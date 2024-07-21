@@ -1,0 +1,35 @@
+:root {
+	--main-color: hotpink; /*this is declaring global variable*/
+	--padd-box: 10px;
+}
+html {
+	background-color: var(--main-color); /*this is calling global variable*/
+	background-color: grey;
+	font-family: calibri;
+	font-size: 32px;
+	color: lightblue;
+	padding: var(--padd-box);
+}
+
+
+/* ---------------------------------------- Item Box with Hover ---------------------------------------- */
+.itembox {
+	background-color: #1E1E1E;
+	width: 480px;
+	height: 480px;
+	border-style: none;
+}
+
+parent width: 800px;
+child width: 100%; /*is it 800px or full window wdith?*/
+
+/* ---------------------------------------- MOBILE Responsive ---------------------------------------- */
+@media screen and (max-width: 480px) {
+  .itembox {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  //...
+}
