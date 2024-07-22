@@ -1,9 +1,9 @@
 :root {
-	--main-color: hotpink; /*this is declaring global variable*/
+	--main-color: hotpink; /*this is declaring a global variable*/
 	--padd-box: 10px;
 }
 html {
-	background-color: var(--main-color); /*this is calling global variable*/
+	background-color: var(--main-color); /*this is using global variable*/
 	background-color: grey;
 	font-family: calibri;
 	font-size: 32px;
