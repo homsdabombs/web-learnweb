@@ -1,6 +1,8 @@
 :root {
 	--main-color: hotpink; /*this is declaring a global variable*/
 	--padd-box: 10px;
+	--side-margin: 10px;
+	--border-design-a: 10px 10px 10px 0px; /*try to use this global variable for border-radius if can work*/
 }
 html {
 	background-color: var(--main-color); /*this is using global variable*/
@@ -16,11 +18,11 @@ html {
 .itembox {
 	background-color: #1E1E1E;
 	width: 480px;
-	height: 480px;
+	height: 64px;
 	border-style: none;
 }
 
-parent width: 800px;
+parent width: 800px; /*what is this parent width?*/
 child width: 100%; /*is it 800px or full window wdith?*/
 
 /* ---------------------------------------- MOBILE Responsive ---------------------------------------- */
@@ -33,3 +35,56 @@ child width: 100%; /*is it 800px or full window wdith?*/
 @media (max-width: 480px) {
   //...
 }
+
+
+
+/* ---------------------------------------- CSS Animation ---------------------------------------- */
+	/* simplifying css property with variable|class */
+	.ease-in {animation-timing-function: ease-in;}
+	.ease-out {animation-timing-function: ease-out;}
+	
+	@keyframes anim1 { /*decaring keyframes with from and to*/
+		from {}
+		to {/* css syntax | css properties */}
+		from {font-size: 10px;}
+		to {font-size: 30px;}
+
+	}
+	@keyframes anim2 { /*declaring keyframes with percentage of duration*/
+		0% {background-color: gray;}
+		100% {background-color: lightgray;}
+		0% {left: 0;}
+		100% {left: calc(100% - 100px);} /*this is intended for mobile responsive most likely*/
+	}
+	/* Play Animation on hover */
+		@keyframes bloop {
+			50% { /* 50% is used for looping animation */
+				color: black;
+				transform: translateY(10px);
+				transform: translateX(50px);
+			}
+		}
+		.bloophover {
+			width: 400px; height: 100px;
+			background-color: white;
+			vertical-align: 0px;
+			animation: bloop 1s ease-in infinite;
+		}
+
+
+
+/* ---------------------------------------- SVG Test ---------------------------------------- */
+	.svgtest {
+		margin: var(--side-margin);
+		background-color: white;
+		background-image: url("images/circle-heat-svgrepo-com.svg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100%; /* (cover[resize background image to COVER entire container] | auto | percentage | px) */
+		--width-svg: 250px;
+		width: var(--width-svg); /*not necessary to set width because by default it will fill entire container swidth*/
+		height: calc(var(--width-svg) * 0.5);
+	}
+
+
+/* ---------------------------------------- Title ---------------------------------------- */
