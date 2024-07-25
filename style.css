@@ -1,45 +1,55 @@
 :root {
+	--width-desktop: 600px;
+	--width-mobile: 480px;
+	--height-min: 600px;
 	--main-color: hotpink; /*this is declaring a global variable*/
 	--padd-box: 10px;
 	--side-margin: 10px;
-	--border-design-a: 10px 10px 10px 0px; /*try to use this global variable for border-radius if can work*/
+	--border-design-a: 15px 15px 0px 0px; /*try to use this global variable for border-radius if can work*/
+	--timing-bounce: cubic-bezier(0.1,1.2,5.5,1.5);
 }
 html {
-	background-color: var(--main-color); /*this is using global variable*/
 	background-color: grey;
 	font-family: calibri;
-	font-size: 32px;
-	color: lightblue;
-	padding: var(--padd-box);
+	font-size: 28px;
+	/*padding: var(--padd-box);*/
+	width: 100%;
+}
+body {
+	margin: 0; /* put this here to remove default margin 10px */
+	max-width: var(--width-desktop);
+	min-width: var(--width-mobile);
+	min-height: var(--height-min);
+	background-color: lightgray;
 }
 
 
 /* ---------------------------------------- Item Box with Hover ---------------------------------------- */
 .itembox {
-	background-color: #1E1E1E;
-	width: 480px;
-	height: 64px;
+	background-color: #FFFFFF;
+	width: 100% - var(--side-margin)*2;
+	height: 2em;
 	border-style: none;
+	border-radius: var(--border-design-a);
+	margin: 0 var(--side-margin);
+	transition: transform 0.15s;
+	transition-timing-function: ease-in-out;
 }
-
-parent width: 800px; /*what is this parent width?*/
-child width: 100%; /*is it 800px or full window wdith?*/
+.itembox:hover {
+	transform: translateY(-10px);
+}
 
 /* ---------------------------------------- MOBILE Responsive ---------------------------------------- */
-@media screen and (max-width: 480px) {
-  .itembox {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  //...
+@media screen and (min-width: var(--width-mobile)) {
+	html {
+		
+	}
 }
 
 
 
 /* ---------------------------------------- CSS Animation ---------------------------------------- */
-	/* simplifying css property with variable|class */
+	/* simplifying css property with variable|class, maybe this is used together with javascript */
 	.ease-in {animation-timing-function: ease-in;}
 	.ease-out {animation-timing-function: ease-out;}
 	
@@ -83,7 +93,7 @@ child width: 100%; /*is it 800px or full window wdith?*/
 		background-size: 100%; /* (cover[resize background image to COVER entire container] | auto | percentage | px) */
 		--width-svg: 250px;
 		width: var(--width-svg); /*not necessary to set width because by default it will fill entire container swidth*/
-		height: calc(var(--width-svg) * 0.5);
+		height: calc(var(--width-svg) * 0.5); /*cannot use auto*/
 	}
 
 
