@@ -1,3 +1,8 @@
+*, *::before, *::after { /* Universal Selector selects all HTML elements. Commonly used for global styling resets.*/
+	margin: 0; /* put this here to remove default margin 10px */
+	padding: 0; /* put this here to remove default padding 0px */
+	box-sizing: border-box; /* this will make container specifically follow the width / height set for container */
+}
 :root {
 	--width-desktop: 600px;
 	--width-mobile: 480px;
@@ -5,18 +10,17 @@
 	--main-color: hotpink; /*this is declaring a global variable*/
 	--padd-box: 10px;
 	--side-margin: 10px;
-	--border-design-a: 15px 15px 0px 0px; /*try to use this global variable for border-radius if can work*/
-	--timing-bounce: cubic-bezier(0.1,1.2,5.5,1.5);
+	--border-design-a: 15px 15px 0px 0px;
+	--timing-bounce: cubic-bezier(0,0,0.5,1.5);
 }
 html {
 	background-color: grey;
 	font-family: calibri;
-	font-size: 28px;
+	font-size: 1.5rem;
 	/*padding: var(--padd-box);*/
 	width: 100%;
 }
 body {
-	margin: 0; /* put this here to remove default margin 10px */
 	max-width: var(--width-desktop);
 	min-width: var(--width-mobile);
 	min-height: var(--height-min);
@@ -25,27 +29,86 @@ body {
 
 
 /* ---------------------------------------- Item Box with Hover ---------------------------------------- */
-.itembox {
-	background-color: #FFFFFF;
-	width: 100% - var(--side-margin)*2;
-	height: 2em;
-	border-style: none;
-	border-radius: var(--border-design-a);
-	margin: 0 var(--side-margin);
-	transition: transform 0.15s;
-	transition-timing-function: ease-in-out;
-}
-.itembox:hover {
-	transform: translateY(-10px);
-}
+	.itembox {
+		background-color: #FFFFFF;
+		width: 100% - var(--side-margin)*2;
+		height: 2em;
+		border-style: none;
+		border-radius: var(--border-design-a);
+		margin: 0 var(--side-margin);
+		transition: transform 0.1s;
+		transition-timing-function: ease-in-out;
+	}
+	.itembox:hover {
+		transform: translateY(-15px);
+	}
+
+	:hover {}
+	.container {
+		/*display: inline-block;*/
+		border: 1px solid black;
+	}
+	.boxmodel {
+		display: inline-block;
+		width: 150px; height: 100px;
+		margin: 0px 0px;
+		background: red;
+	}
+	.link {
+		color: orange;
+	}
+	.containerZirul {
+		margin: auto;
+		background-color: blue;
+		width: 500px;
+		height: 300px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.boxA {
+		background-color: red;
+		width: 400px;
+		height: 200px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.boxB {
+		background-color: yellow;
+		width: 300px;
+		height: 100px;
+	}
+
+
+	.container-link {
+		position: relative;
+		background-color: brown;
+		width: 200px;
+		height: 50px;
+		overflow: hidden;
+
+	}
+	.link-pop {
+		position: absolute;
+		background-color: blue;
+		width: 200px;
+		height: 50px;
+		line-height: 50px;
+		top: 50px;
+		transition: transform 0.1s;
+		text-align: center;
+	}
+	.container-link:hover .link-pop {
+		transform: translateY(-50px);
+	}
 
 /* ---------------------------------------- MOBILE Responsive ---------------------------------------- */
-@media screen and (min-width: var(--width-mobile)) {
-	html {
-		
+	@media screen and (min-width: var(--width-mobile)) {
+		html {
+			
+		}
 	}
-}
-
 
 
 /* ---------------------------------------- CSS Animation ---------------------------------------- */
@@ -80,7 +143,6 @@ body {
 			vertical-align: 0px;
 			animation: bloop 1s ease-in infinite;
 		}
-
 
 
 /* ---------------------------------------- SVG Test ---------------------------------------- */
