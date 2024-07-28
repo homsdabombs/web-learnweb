@@ -54,7 +54,7 @@ body {
 		margin: 0px 0px;
 		background: red;
 	}
-	.link {
+	.link-span {
 		color: orange;
 	}
 	.containerZirul {
@@ -80,24 +80,28 @@ body {
 		height: 100px;
 	}
 
-
 	.container-link {
 		position: relative;
 		background-color: brown;
 		width: 200px;
 		height: 50px;
 		overflow: hidden;
-
+		text-align: center;
+		line-height: 50px;
+		transition: line-height 0.1s;
 	}
 	.link-pop {
 		position: absolute;
-		background-color: blue;
+		background-color: maroon;
 		width: 200px;
 		height: 50px;
 		line-height: 50px;
 		top: 50px;
 		transition: transform 0.1s;
 		text-align: center;
+	}
+	.container-link:hover {
+		line-height: 150px;
 	}
 	.container-link:hover .link-pop {
 		transform: translateY(-50px);
@@ -112,22 +116,9 @@ body {
 
 
 /* ---------------------------------------- CSS Animation ---------------------------------------- */
-	/* simplifying css property with variable|class, maybe this is used together with javascript */
-	.ease-in {animation-timing-function: ease-in;}
-	.ease-out {animation-timing-function: ease-out;}
-	
 	@keyframes anim1 { /*decaring keyframes with from and to*/
 		from {}
 		to {/* css syntax | css properties */}
-		from {font-size: 10px;}
-		to {font-size: 30px;}
-
-	}
-	@keyframes anim2 { /*declaring keyframes with percentage of duration*/
-		0% {background-color: gray;}
-		100% {background-color: lightgray;}
-		0% {left: 0;}
-		100% {left: calc(100% - 100px);} /*this is intended for mobile responsive most likely*/
 	}
 	/* Play Animation on hover */
 		@keyframes bloop {
@@ -157,6 +148,3 @@ body {
 		width: var(--width-svg); /*not necessary to set width because by default it will fill entire container swidth*/
 		height: calc(var(--width-svg) * 0.5); /*cannot use auto*/
 	}
-
-
-/* ---------------------------------------- Title ---------------------------------------- */
