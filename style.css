@@ -14,17 +14,20 @@
 	--timing-bounce: cubic-bezier(0,0,0.5,1.5);
 }
 html {
-	background-color: grey;
+	background: linear-gradient(lightskyblue, blueviolet);
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: calibri;
 	font-size: 1.5rem;
 	/*padding: var(--padd-box);*/
 	width: 100%;
+	min-height: 100vh; /*viewport height*/
 }
 body {
 	max-width: var(--width-desktop);
 	min-width: var(--width-mobile);
 	min-height: var(--height-min);
-	background-color: lightgray;
+	/*background-color: lightgray;*/
 }
 
 .container {
