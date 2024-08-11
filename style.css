@@ -82,6 +82,18 @@ body {
 	transform: translateY(-50px);
 }
 
+#SportsID {
+	border: none;
+	background-color: white;
+	margin: 0px 10px;
+	height: 30px;
+}
+
+button {
+	width: 100px;
+	height: 30px;
+}
+
 /* ---------------------------------------- MOBILE Responsive ---------------------------------------- */
 	@media screen and (max-width: 480px) {
 		.container {
