@@ -1,0 +1,79 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+	background-color: #000;
+	color: #808080;
+}
+
+
+
+
+
+.container-slides {
+	position: absolute; left: 200px;
+	display: flex;
+	width: 600px; height: 300px;
+	border: 1px solid white;
+	padding: 10px;
+	overflow: hidden;
+}
+.slide {
+	transform: translateX(0%);
+	flex-shrink: 0;
+	border: 1px solid grey;
+	width: 100%;
+	height: 100%;
+}
+.slide.active {
+	border: 1px solid white;
+}
+
+
+
+.container-slider-B {
+	--anim-duration: 20s;
+	--container-width: 90vw;
+	--container-height:  100px;
+	--slide-total:  9;
+
+	position: absolute;
+	top: calc(50vh - var(--container-height) * 0.5);
+	left: calc(50vw - var(--container-width) * 0.5);
+	border: 1px solid white;
+	width: var(--container-width); height: var(--container-height);
+	overflow: hidden;
+}
+.container-slider-B:hover .item {
+	animation-play-state: paused;
+}
+.container-slider-B .item:hover {
+	background-color: red;
+}
+.container-slider-B .item {
+	/*--width-item:  calc((var(--container-width)/calc(var(--slide-total) - 1))*0.95);*/
+	--width-item:  120px;
+	
+	background-color: maroon;
+	position: absolute;
+	width:  var(--width-item);
+	height: 100%;
+	border: 1px solid grey;
+	left: max(calc(var(--width-item) * (var(--slide-total) - 1)) , 100%);
+	animation-name: scrollLeft;
+	animation-duration: var(--anim-duration);
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	/*animation: scrollLeft var(--anim-duration) linear infinite;*/
+}
+@keyframes scrollLeft {
+	to {left: calc(var(--width-item) * -1);}
+}
+.container-slider-B .item.item1 {animation-delay:  calc(var(--anim-duration) / var(--slide-total) * (var(--slide-total) - 1) * -1);}
+.container-slider-B .item.item2 {animation-delay:  calc(var(--anim-duration) / var(--slide-total) * (var(--slide-total) - 2) * -1);}
+.container-slider-B .item.item3 {animation-delay:  calc(var(--anim-duration) / var(--slide-total) * (var(--slide-total) - 3) * -1);}
+.container-slider-B .item.item4 {animation-delay:  calc(var(--anim-duration) / var(--slide-total) * (var(--slide-total) - 4) * -1);}
+.container-slider-B .item.item5 {animation-delay:  calc(var(--anim-duration) / var(--slide-total) * (var(--slide-total) - 5) * -1);}
+.container-slider-B .item.item6 {animation-delay:  calc(var(--anim-duration) / var(--slide-total) * (var(--slide-total) - 6) * -1);}
+.container-slider-B .item.item7 {animation-delay:  calc(var(--anim-duration) / var(--slide-total) * (var(--slide-total) - 7) * -1);}
+.container-slider-B .item.item8 {animation-delay:  calc(var(--anim-duration) / var(--slide-total) * (var(--slide-total) - 8) * -1);}
+.container-slider-B .item.item9 {animation-delay:  calc(var(--anim-duration) / var(--slide-total) * (var(--slide-total) - 9) * -1);}
