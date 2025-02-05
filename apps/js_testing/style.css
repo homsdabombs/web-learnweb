@@ -6,12 +6,9 @@ body {
 }
 
 
-
-
-
 .container-slides {
 	position: absolute; left: 200px;
-	display: flex;
+	/*display: flex;*/
 	width: 600px; height: 300px;
 	border: 1px solid white;
 	padding: 10px;
@@ -29,7 +26,6 @@ body {
 }
 
 
-
 .container-slider-B {
 	--anim-duration: 20s;
 	--container-width: 90vw;
@@ -43,12 +39,8 @@ body {
 	width: var(--container-width); height: var(--container-height);
 	overflow: hidden;
 }
-.container-slider-B:hover .item {
-	animation-play-state: paused;
-}
-.container-slider-B .item:hover {
-	background-color: red;
-}
+.container-slider-B:hover .item {animation-play-state: paused;}
+.container-slider-B .item:hover {background-color: red;}
 .container-slider-B .item {
 	/*--width-item:  calc((var(--container-width)/calc(var(--slide-total) - 1))*0.95);*/
 	--width-item:  120px;

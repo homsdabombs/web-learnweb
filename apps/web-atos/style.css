@@ -1,0 +1,78 @@
+*, *::before, *::after {box-sizing: border-box; margin: 0; padding: 0;}
+
+html {font-family: calibri;}
+body {
+	background-color: #3C4144;
+	--width-max: 540px;
+	display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		gap: 20px;
+	height: 100vh;
+	padding: 10px;
+}
+
+div.header {
+	display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+	width: min(var(--width-max), 100%);
+	background-color: lightgreen;
+	color: black;
+	/*text-align: center;*/
+	padding: 10px;
+	border-radius: 999px;
+}
+
+#searchbar {
+	display: none;
+}
+#btn-search {
+	width: 24px; height: 24px;
+	background-color: white;
+	cursor: pointer;
+}
+
+.form-contactus {
+	--height-input: 32px;
+	--radius: 3px;
+	display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+	width: 100%;
+	padding: 10px;
+	border-radius: 10px;
+	max-width: var(--width-max);
+	border: 1px solid black;
+}
+.form-contactus input, select {
+	background-color: white;
+	width: 100%;
+	min-height: var(--height-input);
+	border: none;
+	border-radius: var(--radius);
+	padding: 10px;
+	border: 1px solid white;
+}
+.form-contactus input:focus, select:focus {
+	outline: none;
+	border: 1px solid gray;
+	background-color: #fafafa;
+}
+.form-contactus button {
+	background-color: lightblue;
+	width: 100%;
+	min-height: var(--height-input);
+	border: none;
+	border-radius: var(--radius);
+}
+.form-contactus button:hover, button:focus {
+	outline: none;
+	background-color: aqua;
+	cursor: pointer;
+}
