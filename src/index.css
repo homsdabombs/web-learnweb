@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'roboto-condensed';
+	src: local('roboto-condensed'), url('./fonts/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+	margin: 0;
+}
